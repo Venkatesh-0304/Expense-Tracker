@@ -1,6 +1,7 @@
 require_relative "category"
 require_relative "expense"
 require_relative "user"
+require_relative "report_generator"
 
 
 
@@ -16,6 +17,7 @@ e3 = Expense.new("ice cream", 50, food, "29/may/26")
 e4 = Expense.new("coke", 40, food, "28/may/26")
 e5 = Expense.new("chocolate", 50, transport, "25/may/26")
 
+r = ReportGenerator.new
 
 u.add_expense(e)
 u.add_expense(e2)
@@ -31,3 +33,4 @@ puts u.total_expense
 u.remove_expense(e.expense_id)
 
 puts u.total_expense
+r.generate_total_spending_report(u)
