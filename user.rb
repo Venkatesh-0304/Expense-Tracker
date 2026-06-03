@@ -11,7 +11,7 @@ class User
   end
 
   def add_expense(expense)  
-    raise InvalidAmount, "Invalid amount" if expense.amount <= 0 
+    raise InvalidAmountError, "Invalid amount" if expense.amount <= 0 
     raise InvalidCategoryError, "Invalid category" unless Category.categories.include?(expense.category)
     @expenses << expense
     puts "#{expense.title} Expense added successfully"
@@ -24,7 +24,7 @@ class User
   def remove_expense(expense_id)
     expense = find_expense(expense_id)
     if expense.nil?
-      raise ExpenseNotFound , "Expense not found"
+      raise ExpenseNotFoundError , "Expense not found"
     else
       @expenses.delete(expense)
       puts "Expense removed successfully"
