@@ -17,17 +17,11 @@ class ReportGenerator
 
   def generate_category_report(user)
     expenses = user.expenses
-    expenses.each do |e|
-      expenses_by_category(e.category.name)
-    end
-  end
+    grouped = expenses.group_by {|e| e.category.name}
 
-  def expenses_by_category(category_name)
-    puts "Expenses by category #{category_name}"
-    @expenses.each do |e|
-      if e.category.name == category_name
-        display_details(e)
-      end
+    grouped.each do |category_name, category_expenses|
+      puts "Expenses by category : #{category_name}"
+      category_expenses.each {|e| display_details(e)}
     end
   end
 
