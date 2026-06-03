@@ -34,11 +34,7 @@ class User
   def list_expenses
     puts "----All expenses----"
     @expenses.each do |e|
-      puts "Expense Title : #{e.title}"
-      puts "Amount : #{e.amount}"
-      puts "Category : #{e.category.name}"
-      puts "Spend on : #{e.spent_on}"
-      puts "-" * 30
+      display_details(e)
     end
   end
 
@@ -54,13 +50,25 @@ class User
     puts "Expenses by category #{category_name}"
     @expenses.each do |e|
       if e.category.name == category_name
-        puts "Expense Title : #{e.title}"
-        puts "Amount : #{e.amount}"
-        puts "Category : #{e.category.name}"
-        puts "Spend on : #{e.spent_on}"
-        puts "-" * 30
+        display_details(e)
       end
     end
+  end
+
+  def monthly_expenses(month, year)
+    @expenses.each do |e|
+      if e.spent_on.month == month && e.spent_on.year == year
+        display_details(e)
+      end
+    end
+  end
+
+  def display_details(e)
+    puts "Expense Title : #{e.title}"
+    puts "Amount : #{e.amount}"
+    puts "Category : #{e.category.name}"
+    puts "Spend on : #{e.spent_on}"
+    puts "-" * 30
   end
 end
 
