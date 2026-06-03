@@ -32,12 +32,13 @@ class User
   end
 
   def list_expenses
+    puts "----All expenses----"
     @expenses.each do |e|
-      puts "----All expenses----"
       puts "Expense Title : #{e.title}"
       puts "Amount : #{e.amount}"
       puts "Category : #{e.category.name}"
       puts "Spend on : #{e.spent_on}"
+      puts "-" * 30
     end
   end
 
