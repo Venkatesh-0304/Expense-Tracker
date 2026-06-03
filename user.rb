@@ -31,7 +31,7 @@ class User
     end
   end
 
-  def list_experses
+  def list_expenses
     @expenses.each do |e|
       puts "----All expenses----"
       puts "Expense Title : #{e.title}"
