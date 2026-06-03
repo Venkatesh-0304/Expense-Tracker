@@ -12,7 +12,7 @@ u = User.new("bhoomi", "bhoomi@gmail.com")
 
 food = Category.new("food")
 food.add_category
-transport = Category.new("trnasport")
+transport = Category.new("transport")
 transport.add_category
 
 e = Expense.new("pizza", 200, food, "3/june/26")
