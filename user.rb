@@ -50,7 +50,7 @@ class User
     puts "Total expenses: #{total_expense}"
   end
 
-  def expeneses_by_category(category_name)
+  def expenses_by_category(category_name)
     puts "Expenses by category #{category_name}"
     @expenses.each do |e|
       if e.category.name == category_name
