@@ -1,0 +1,2 @@
+class InvalidCategoryError < StandardError
+end
