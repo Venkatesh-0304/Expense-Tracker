@@ -8,7 +8,13 @@ class Expense
     @@expense_id += 1
     @expense_id = @@expense_id
     @title = title
-    @amount = amount
+
+    if amount <= 0
+      raise InvalidAmountError, "Invalid amount"
+    else
+      @amount = amount
+    end
+    
     @category = category
     @spent_on = spent_on
   end
