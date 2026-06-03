@@ -12,15 +12,11 @@ class User
     @expenses = [] 
   end
 
-  def add_expense(expense)
-    if expense.amount <= 0
-      raise InvalidAmount, "Invalid Amount"
-    elsif !@categories.include?(expense.category)
-      raise InvalidCategoryError, "Invalid category"
-    else
-      @expenses << expense
-      puts "#{expense.title} Expense added successfully"
-    end
+  def add_expense(expense)  
+    raise InvalidAmount, "Invalid amount" if expense.amount <= 0 
+    raise InvalidCategoryError, "Invalid category" unless Category.categories.include?(expense.category)
+    @expenses << expense
+    puts "#{expense.title} Expense added successfully"
   end
 
   def find_expense(expense_id)
@@ -59,6 +55,9 @@ end
 u = User.new("bhoomi", "bhoomi@gmail.com")
 u1 = User.new("priya", "priya@gmail.com")
 food = Category.new("food")
+food.add_category
+transport = Category.new("trnasport")
+transport.add_category
 e = Expense.new("pizza", 200, food, "3/june/26")
 e2 = Expense.new("burger", 100, food, "30/may/26")
 e3 = Expense.new("ice cream", 50, food, "29/may/26")
