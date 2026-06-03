@@ -25,7 +25,7 @@ u.add_expense(e4)
 u.add_expense(e5)
 
 
-u.list_experses
+u.list_expenses
 puts u.total_expense
 # puts e.expense_id
 u.remove_expense(e.expense_id)
