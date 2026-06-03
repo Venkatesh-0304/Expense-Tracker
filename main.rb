@@ -20,7 +20,7 @@ e = Expense.new("pizza", 200, food, Date.new(2025, 8, 5))
 e2 = Expense.new("burger", 100, food, Date.new(2026, 12, 20))
 e3 = Expense.new("ice cream", 50, food, Date.new(2024, 6, 23))
 e4 = Expense.new("coke", 40, food, Date.new(2025, 8, 5))
-e5 = Expense.new("chocolate", 50, transport, Date.new(2026, 12, 25))
+e5 = Expense.new("bus ticket", 50, transport, Date.new(2026, 12, 25))
 
 
 u.add_expense(e)
@@ -28,15 +28,15 @@ u.add_expense(e2)
 u.add_expense(e3)
 u.add_expense(e4)
 u.add_expense(e5)
-u.list_expenses
-puts u.total_expense
-u.remove_expense(e.expense_id)
-puts u.total_expense
+# u.list_expenses
+# puts u.total_expense
+# u.remove_expense(e.expense_id)
+# puts u.total_expense
 
-u.expenses_by_category("food")
-u.monthly_expenses(12, 2026)
+# u.expenses_by_category("food")
+# u.monthly_expenses(12, 2026)
 
 r = ReportGenerator.new
-r.generate_total_spending_report(u)
+# r.generate_total_spending_report(u)
 r.generate_category_report(u)
-r.generate_monthly_report(u, 12, 2026)
+# r.generate_monthly_report(u, 12, 2026)
