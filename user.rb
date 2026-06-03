@@ -49,5 +49,18 @@ class User
     end
     puts "Total expenses: #{total_expense}"
   end
+
+  def expeneses_by_category(category_name)
+    puts "Expenses by category #{category_name}"
+    @expenses.each do |e|
+      if e.category.name == category_name
+        puts "Expense Title : #{e.title}"
+        puts "Amount : #{e.amount}"
+        puts "Category : #{e.category.name}"
+        puts "Spend on : #{e.spent_on}"
+        puts "-" * 30
+      end
+    end
+  end
 end
 
