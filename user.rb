@@ -30,6 +30,16 @@ class User
       raise ExpenseNotFound , "Expense not found"
     end
   end
+
+  def list_experses
+    @expenses.each do |e|
+      puts "----All expenses----"
+      puts "Expense Title : #{e.title}"
+      puts "Amount : #{e.amount}"
+      puts "Category : #{e.category.name}"
+      puts "Spend on : #{e.spent_on}"
+    end
+  end
 end
 
 u = User.new("bhoomi", "bhoomi@gmail.com")
@@ -44,5 +54,6 @@ e = Expense.new("pizza", 30, food, "3/june/26")
 # puts u1.email
 # puts u1.user_id
 u.add_expense(e)
+u.list_experses
 # puts e.expense_id
-u.remove_expense(e.expense_id)
+# u.remove_expense(e.expense_id)
