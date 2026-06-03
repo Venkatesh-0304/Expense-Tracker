@@ -3,7 +3,7 @@ class ReportGenerator
     puts "____Total spending report_____"
     puts "Name : #{user.name}"
     puts "Email : #{user.email}"
-    puts "Total Expenses : #{user.total_expense}"
+    puts "#{user.total_expense}"
   end
 end
 
