@@ -13,8 +13,14 @@ class User
   end
 
   def add_expense(expense)
-    @expenses << expense
-    puts "#{expense.title} Expense added successfully"
+    if expense.amount <= 0
+      raise InvalidAmount, "Invalid Amount"
+    elsif !@categories.include?(expense.category)
+      raise InvalidCategoryError, "Invalid category"
+    else
+      @expenses << expense
+      puts "#{expense.title} Expense added successfully"
+    end
   end
 
   def find_expense(expense_id)
@@ -23,11 +29,11 @@ class User
 
   def remove_expense(expense_id)
     expense = find_expense(expense_id)
-    if expense
+    if expense.empty?
+      raise ExpenseNotFound , "Expense not found"
+    else
       @expenses.delete(expense)
       puts "Expense removed successfully"
-    else
-      raise ExpenseNotFound , "Expense not found"
     end
   end
 
@@ -58,7 +64,7 @@ e2 = Expense.new("burger", 100, food, "30/may/26")
 e3 = Expense.new("ice cream", 50, food, "29/may/26")
 
 e4 = Expense.new("coke", 40, food, "28/may/26")
-e5 = Expense.new("chocolate", 50, food, "25/may/26")
+e5 = Expense.new("chocolate", 50, transport, "25/may/26")
 
 
 
