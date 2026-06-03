@@ -1,5 +1,3 @@
-require_relative "expense"
-require_relative "category"
 class User
   @@user_id = 0 
 
@@ -25,7 +23,7 @@ class User
 
   def remove_expense(expense_id)
     expense = find_expense(expense_id)
-    if expense.empty?
+    if expense.nil?
       raise ExpenseNotFound , "Expense not found"
     else
       @expenses.delete(expense)
@@ -51,40 +49,4 @@ class User
     puts "Total expenses: #{total_expense}"
   end
 end
-
-u = User.new("bhoomi", "bhoomi@gmail.com")
-u1 = User.new("priya", "priya@gmail.com")
-food = Category.new("food")
-food.add_category
-transport = Category.new("trnasport")
-transport.add_category
-e = Expense.new("pizza", 200, food, "3/june/26")
-e2 = Expense.new("burger", 100, food, "30/may/26")
-e3 = Expense.new("ice cream", 50, food, "29/may/26")
-
-e4 = Expense.new("coke", 40, food, "28/may/26")
-e5 = Expense.new("chocolate", 50, transport, "25/may/26")
-
-
-
-# puts u.name
-# puts u.email
-# puts u.user_id
-# puts u1.name
-# puts u1.email
-# puts u1.user_id
-u.add_expense(e)
-u.add_expense(e2)
-u.add_expense(e3)
-
-u.add_expense(e4)
-u.add_expense(e5)
-
-
-u.list_experses
-puts u.total_expense
-# puts e.expense_id
-u.remove_expense(e5.expense_id)
-
-puts u.total_expense
 
