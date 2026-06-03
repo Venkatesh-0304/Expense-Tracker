@@ -1,3 +1,6 @@
+require_relative "expense_not_found_error"
+require_relative "invalid_amount_error"
+require_relative "invalid_category_error"
 require_relative "category"
 require_relative "expense"
 require_relative "user"
@@ -14,7 +17,7 @@ e = Expense.new("pizza", 200, food, "3/june/26")
 e2 = Expense.new("burger", 100, food, "30/may/26")
 e3 = Expense.new("ice cream", 50, food, "29/may/26")
 
-e4 = Expense.new("coke", 40, food, "28/may/26")
+e4 = Expense.new("coke", 0, food, "28/may/26")
 e5 = Expense.new("chocolate", 50, transport, "25/may/26")
 
 r = ReportGenerator.new
