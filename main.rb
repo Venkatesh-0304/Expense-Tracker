@@ -33,5 +33,7 @@ puts u.total_expense
 u.remove_expense(e.expense_id)
 puts u.total_expense
 
+u.expenses_by_category("food")
+
 r = ReportGenerator.new
 r.generate_total_spending_report(u)
