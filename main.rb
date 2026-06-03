@@ -38,3 +38,5 @@ u.monthly_expenses(12, 2026)
 
 r = ReportGenerator.new
 r.generate_total_spending_report(u)
+r.generate_category_report(u)
+r.generate_monthly_report(u, 12, 2026)
