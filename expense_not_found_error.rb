@@ -1,0 +1,2 @@
+class ExpenseNotFoundError < StandardError
+end
