@@ -34,6 +34,7 @@ u.remove_expense(e.expense_id)
 puts u.total_expense
 
 u.expenses_by_category("food")
+u.monthly_expenses(12, 2026)
 
 r = ReportGenerator.new
 r.generate_total_spending_report(u)
