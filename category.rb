@@ -9,8 +9,8 @@ class Category
     @@categories << self
     puts "#{self.name} Category added successfully"
   end
-end
 
-c = Category.new("food")
-c.add_category
-puts c.name
+  def self.categories
+    @@categories
+  end
+end
