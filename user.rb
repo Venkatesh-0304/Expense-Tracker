@@ -56,6 +56,7 @@ class User
   end
 
   def monthly_expenses(month, year)
+    puts "\nMonthly Expenses of month #{month} and year #{year}\n\n"
     @expenses.each do |e|
       if e.spent_on.month == month && e.spent_on.year == year
         display_details(e)
