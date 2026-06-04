@@ -12,4 +12,12 @@ class Expense
     raise "Cannot add future expenses" if spent_on > Date.today
     @spent_on = spent_on
   end
+
+  def display_details
+    puts "_________________________________________________"
+    puts "Expense Title : #{self.title}"
+    puts "Amount : #{self.amount}"
+    puts "Category : #{self.category.name}"
+    puts "Spend on : #{self.spent_on}"
+  end
 end
