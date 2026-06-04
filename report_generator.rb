@@ -22,10 +22,7 @@ class ReportGenerator
       total = 0
       puts "_________________________________________________"
       puts "Expenses by category : #{category_name}"
-      category_expenses.each do |e| 
-        display_details(e)
-        total += e.amount
-      end
+      total = expenses.sum(&:amount)
       puts "Total from category #{category_name} : #{total}"
       puts "_________________________________________________"
     end
