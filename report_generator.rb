@@ -7,12 +7,17 @@ class ReportGenerator
   end
 
   def generate_monthly_report(user, month, year)
+    puts "Monthly Spends "
     expenses = user.expenses
-    expenses.each do |e|
-      if e.spent_on.month == month && e.spent_on.year == year
-        display_details(e)
-      end
+    user_monthly_expenses = expenses.select do |e| 
+      e.spent_on.month == month && e.spent_on.year == year
     end
+
+    user_monthly_expenses.each  {|e| display_details(e)}
+
+    total = user_monthly_expenses.sum(&:amount)
+    puts "\n"
+    puts "Total for the month #{month} is : #{total}"
   end
 
   def generate_category_report(user)
