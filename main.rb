@@ -17,10 +17,10 @@ transport.add_category
 
 e = Expense.new("pizza", 200, food, Date.new(2025, 8, 5))
 # e = Expense.new("pizza", 0, food, "3/june/26")  # raises InvalidAmountError
-e2 = Expense.new("burger", 100, food, Date.new(2026, 12, 20))
+e2 = Expense.new("burger", 100, food, Date.new(2026, 3, 20))
 e3 = Expense.new("ice cream", 50, food, Date.new(2024, 6, 23))
 e4 = Expense.new("coke", 40, food, Date.new(2025, 8, 5))
-e5 = Expense.new("bus ticket", 50, transport, Date.new(2026, 12, 25))
+e5 = Expense.new("bus ticket", 50, transport, Date.new(2026, 3, 25))
 
 
 u.add_expense(e)
@@ -39,4 +39,4 @@ u.add_expense(e5)
 r = ReportGenerator.new
 # r.generate_total_spending_report(u)
 r.generate_category_report(u)
-# r.generate_monthly_report(u, 12, 2026)
+r.generate_monthly_report(u, 3, 2026)
