@@ -9,6 +9,7 @@ class Expense
     @title = title
     @amount = amount
     @category = category
+    raise "Cannot add future expenses" if spent_on > Date.today
     @spent_on = spent_on
   end
 end
