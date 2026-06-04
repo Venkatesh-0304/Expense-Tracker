@@ -8,19 +8,19 @@ require_relative "user"
 require_relative "report_generator"
 
 
-u = User.new("bhoomi", "bhoomi@gmail.com")
+u = User.new("Bhoomi", "bhoomi@gmail.com")
 
-food = Category.new("food")
+food = Category.new("Food")
 food.add_category
-transport = Category.new("transport")
+transport = Category.new("Transport")
 transport.add_category
 
-e = Expense.new("pizza", 200, food, Date.new(2025, 8, 5))
-# e = Expense.new("pizza", 0, food, "3/june/26")  # raises InvalidAmountError
-e2 = Expense.new("burger", 100, food, Date.new(2026, 3, 20))
-e3 = Expense.new("ice cream", 50, food, Date.new(2024, 6, 23))
-e4 = Expense.new("coke", 40, food, Date.new(2025, 8, 5))
-e5 = Expense.new("bus ticket", 50, transport, Date.new(2026, 3, 25))
+e = Expense.new("Pizza", 200, food, Date.new(2025, 8, 5))
+# e = Expense.new("Pizza", 0, food, "3/june/26")  # raises InvalidAmountError
+e2 = Expense.new("Burger", 100, food, Date.new(2026, 3, 20))
+e3 = Expense.new("Ice Cream", 50, food, Date.new(2024, 6, 23))
+e4 = Expense.new("Coke", 40, food, Date.new(2025, 8, 5))
+e5 = Expense.new("Bus ticket", 50, transport, Date.new(2026, 3, 25))
 
 
 u.add_expense(e)
