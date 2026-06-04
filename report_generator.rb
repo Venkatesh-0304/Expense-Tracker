@@ -13,7 +13,7 @@ class ReportGenerator
       e.spent_on.month == month && e.spent_on.year == year
     end
 
-    user_monthly_expenses.each  {|e| display_details(e)}
+    user_monthly_expenses.each  {|e| e.display_details}
 
     total = user_monthly_expenses.sum(&:amount)
     puts "\n"
@@ -31,14 +31,6 @@ class ReportGenerator
       puts "Total from category #{category_name} : #{total}"
       puts "_________________________________________________"
     end
-  end
-
-  def display_details(e)
-    puts "_________________________________________________"
-    puts "Expense Title : #{e.title}"
-    puts "Amount : #{e.amount}"
-    puts "Category : #{e.category.name}"
-    puts "Spend on : #{e.spent_on}"
   end
 end
 
